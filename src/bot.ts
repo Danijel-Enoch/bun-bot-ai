@@ -29,7 +29,7 @@ bot.api.setMyCommands([
 	},
 ]);
 
-bot.inlineQuery(/best bot (framework|library)/, async (ctx) => {
+bot.inlineQuery("/test", async (ctx) => {
 	// Create a single inline query result.
 	const result = InlineQueryResultBuilder.article(
 		"id:grammy-website",
@@ -54,6 +54,10 @@ bot.inlineQuery(/best bot (framework|library)/, async (ctx) => {
 });
 
 // Return empty result list for other queries.
-bot.on("inline_query", (ctx) => ctx.answerInlineQuery([]));
+bot.on("inline_query", (ctx) => {
+	console.log(1111);
+	ctx.reply("inline Working");
+	ctx.answerInlineQuery([]);
+});
 
 bot.use(commandsComposer);
