@@ -4,7 +4,8 @@
         "runtime": "bun-vercel ./scripts/webhook.ts"
     },
     "dependencies": {
-        "grammy": "^1.19.2"
+        "grammy": "^1.19.2",
+        "@grammyjs/conversations":"*"
     },
     "devDependencies": {
         "bun-vercel": "1.0.0-alpha.5"

@@ -8,6 +8,7 @@ let commands: any[] = [
 	{ name: "help", command: helpCommand },
 	{ name: "start", command: startCommand },
 	{ name: "insight", command: insightCommand },
+	{ name: "predict", command: insightCommand },
 ];
 
 for (let index = 0; index < commands.length; index++) {
