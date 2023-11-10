@@ -7,6 +7,11 @@ const { BOT_TOKEN: token = "" } = process.env;
 type MyContext = Context;
 export const bot = new Bot<Context>(token);
 
+bot.on("message", async (ctx) => {
+	await ctx.reply("Hi there!");
+});
+
+bot.use(commandsComposer);
 // attach all middleware
 bot.api.setMyCommands([
 	{
@@ -25,5 +30,3 @@ bot.api.setMyCommands([
 ]);
 
 // bot.use(conversations() as any);
-
-bot.use(commandsComposer);
