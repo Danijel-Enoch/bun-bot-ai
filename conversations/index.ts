@@ -62,7 +62,7 @@ export async function predictMarkeCapConversation(
 
 	fetch(url, options)
 		.then((res) => res.json())
-		.then((json) => {
+		.then((json: any) => {
 			// const prediction = json.prediction;
 			console.log(json.prediction);
 
