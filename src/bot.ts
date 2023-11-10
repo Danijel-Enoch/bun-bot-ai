@@ -1,17 +1,10 @@
 import { Bot, Context, session } from "grammy";
-import {
-	type Conversation,
-	type ConversationFlavor,
-	conversations,
-	createConversation,
-} from "@grammyjs/conversations";
 import { commandsComposer } from "../commands";
 import { predictMarkeCapConversation } from "../conversations";
 const { BOT_TOKEN: token = "" } = process.env;
 
-type MyContext = Context & ConversationFlavor;
-type MyConversation = Conversation<MyContext>; // Set your token in the vercel environment variable
-export const bot = new Bot<MyContext>(token);
+type MyContext = Context;
+export const bot = new Bot<Context>(token);
 
 // attach all middleware
 bot.api.setMyCommands([
@@ -30,12 +23,4 @@ bot.api.setMyCommands([
 	},
 ]);
 
-bot.use(conversations());
-
 bot.use(commandsComposer);
-bot.use(
-	createConversation(
-		predictMarkeCapConversation,
-		"predictMarkeCapConversation"
-	)
-);

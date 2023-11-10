@@ -1,32 +1,8 @@
-import {
-	type Conversation,
-	type ConversationFlavor,
-	conversations,
-	createConversation,
-} from "@grammyjs/conversations";
 import { Bot, CommandContext, Context } from "grammy";
 
-type MyContext = Context & ConversationFlavor;
-type MyConversation = Conversation<MyContext>;
+type MyContext = Context;
 
-export async function predictMarkeCapConversation(
-	conversation: MyConversation,
-	ctx: MyContext
-) {
-	await ctx.reply("Enter token Name: ");
-	const name = await conversation.waitFor(":text");
-	await ctx.reply("Enter token TotalSupply: ");
-	const totalSupply = await conversation.waitFor(":text");
-	await ctx.reply("Enter token Holder: ");
-	const holders = await conversation.waitFor(":text");
-	await ctx.reply("Enter token LP locker time Duration: ");
-	const lpLockTime = await conversation.waitFor(":text");
-	await ctx.reply("Enter token number of averag Callers: ");
-	const Callers = await conversation.waitFor(":text");
-	//titleCtx.msg.text
-	await ctx.reply("Enter token current MarketCap: ");
-	const marketCap = await conversation.waitFor(":text");
-
+export async function predictMarkeCapConversation(ctx: MyContext) {
 	// let url = "https://ai-api-gilt.vercel.app/predict";
 
 	// let options = {
