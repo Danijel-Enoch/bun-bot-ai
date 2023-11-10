@@ -1,9 +1,9 @@
-import { bot } from '../src/bot'
+import { bot } from "../src/bot.js";
 
 const {
-    VERCEL_URL: host,
-    // set your webhook address or use default Vercel deployment url
-    WEBHOOK: webhook = `https://${host}/`,
-} = process.env
+	VERCEL_URL: host,
+	// set your webhook address or use default Vercel deployment url
+	WEBHOOK: webhook = `https://${host}/`,
+} = process.env;
 
-void bot.api.setWebhook(webhook)
+void bot.api.setWebhook(webhook);

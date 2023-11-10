@@ -1,7 +1,7 @@
 import { Bot, Context, session } from "grammy";
 import { commandsComposer } from "../commands";
 import { predictMarkeCapConversation } from "../conversations";
-import { conversations } from "../deno.dependencies";
+import { conversations } from "@grammyjs/conversations";
 const { BOT_TOKEN: token = "" } = process.env;
 
 type MyContext = Context;
@@ -24,6 +24,6 @@ bot.api.setMyCommands([
 	},
 ]);
 
-bot.use(conversations());
+bot.use(conversations() as any);
 
 bot.use(commandsComposer);
