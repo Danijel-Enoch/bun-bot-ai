@@ -1,17 +1,30 @@
 import { Bot, Context, session } from "grammy";
 import { commandsComposer } from "../commands";
 import { predictMarkeCapConversation } from "../conversations";
-import { conversations } from "@grammyjs/conversations";
-const { BOT_TOKEN: token = "" } = process.env;
+import {
+	type Conversation,
+	type ConversationFlavor,
+	conversations,
+	createConversation,
+} from "@grammyjs/conversations";
+// const { BOT_TOKEN: token = "" } = process.env;
 
-type MyContext = Context;
-export const bot = new Bot<Context>(token);
+type MyContext = Context & ConversationFlavor;
+type MyConversation = Conversation<MyContext>;
 
-bot.on("message", async (ctx) => {
-	await ctx.reply("Hi there!");
-});
+export const bot = new Bot<MyContext>(
+	"6910977386:AAEpWPV04nggB4uqVABvcV53-l7-AMYkhY8"
+);
 
-bot.use(commandsComposer);
+bot.use(
+	session({
+		initial() {
+			// return empty object for now
+			return {};
+		},
+	})
+);
+
 // attach all middleware
 bot.api.setMyCommands([
 	{
@@ -25,8 +38,12 @@ bot.api.setMyCommands([
 	},
 	{
 		command: "predict",
-		description: "Predict Marketcaps ll",
+		description: "Predict Marketcaps ",
 	},
 ]);
 
-// bot.use(conversations() as any);
+bot.use(conversations() as any);
+bot.use(createConversation(predictMarkeCapConversation));
+bot.use(commandsComposer);
+
+bot.start();
