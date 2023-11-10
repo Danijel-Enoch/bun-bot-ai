@@ -1,5 +1,5 @@
 import { Composer } from "grammy";
-import { helpCommand } from "./help.command";
+import { helpCommand } from "./help.commmand";
 import { startCommand } from "./start.command";
 let commandsComposer = new Composer();
 
