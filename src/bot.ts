@@ -20,10 +20,10 @@ bot.api.setMyCommands([
 	},
 	{
 		command: "predict",
-		description: "Predict Marketcaps",
+		description: "Predict Marketcaps ll",
 	},
 ]);
 
-bot.use(conversations() as any);
+// bot.use(conversations() as any);
 
 bot.use(commandsComposer);
