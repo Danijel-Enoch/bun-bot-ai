@@ -46,4 +46,4 @@ bot.use(conversations() as any);
 bot.use(createConversation(predictMarkeCapConversation));
 bot.use(commandsComposer);
 
-bot.start();
+// bot.start();
