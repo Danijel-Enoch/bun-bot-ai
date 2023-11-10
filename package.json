@@ -1,12 +1,13 @@
 {
-	"scripts": {
-		"build": "bun scripts/build.ts",
-		"runtime": "bun-vercel ./scripts/webhook.ts"
-	},
-	"dependencies": {
-		"grammy": "^1.19.2"
-	},
-	"devDependencies": {
-		"bun-vercel": "1.0.0-alpha.5"
-	}
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "runtime": "bun-vercel ./scripts/webhook.ts"
+  },
+  "dependencies": {
+    "@grammyjs/conversations": "^1.1.2",
+    "grammy": "^1.19.2"
+  },
+  "devDependencies": {
+    "bun-vercel": "1.0.0-alpha.5"
+  }
 }
