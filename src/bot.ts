@@ -12,7 +12,10 @@ bot.api.setMyCommands([
 		description: "get Started with insight gpt bt",
 	},
 	{ command: "help", description: "Contact our Help Channel" },
-	{ command: "insight", description: "Contact our Help Channel" },
+	{
+		command: "insight",
+		description: "Get GPT insight Rating on Degen Projects",
+	},
 ]);
 
 bot.use(commandsComposer);
