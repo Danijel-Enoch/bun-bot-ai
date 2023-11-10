@@ -23,10 +23,3 @@ export {
 	parseMode,
 	type ParseModeFlavor,
 } from "https://deno.land/x/grammy_parse_mode@1.5.0/mod.ts";
-export { run } from "https://deno.land/x/grammy_runner@v1.0.4/mod.ts";
-export {
-	Application,
-	Router,
-	type RouterContext,
-} from "https://deno.land/x/oak@v11.1.0/mod.ts";
-export { autoRetry } from "https://esm.sh/@grammyjs/auto-retry@1.1.1";
