@@ -24,6 +24,10 @@ bot.api.setMyCommands([
 		command: "insight",
 		description: "Get GPT insight Rating on Degen Projects",
 	},
+	{
+		command: "predict",
+		description: "Predict Marketcaps",
+	},
 ]);
 
 bot.use(conversations());
